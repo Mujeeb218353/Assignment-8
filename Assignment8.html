@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 8</title>
+</head>
+<body>
+    <div>
+        <h1>Question 1</h1>
+        <label >
+            Enter Number or Alphabet
+            <input type="text" id="getInput" maxlength="1">
+            <button onclick="
+                let alphabetOrNumber = document.getElementById('getInput').value;
+                if(alphabetOrNumber >= 'A' && alphabetOrNumber <= 'Z'){
+                    document.getElementById('letterCheck').innerHTML = alphabetOrNumber+' is a string and Upper Case';
+                }else if (alphabetOrNumber >= 'a' && alphabetOrNumber <= 'z'){
+                    document.getElementById('letterCheck').innerHTML = alphabetOrNumber+' is a string and Lower Case';
+                }else if(alphabetOrNumber >= 0){
+                    document.getElementById('letterCheck').innerHTML = alphabetOrNumber+' is a number';
+                }else{
+                    document.getElementById('letterCheck').innerHTML = 'Enter Valid Value';
+                }
+            ">Enter</button>
+        </label>
+        <p id="letterCheck"></p>
+    </div>
+    <div id="integers">
+        <h1>Question 2</h1>
+        <label>
+            Enter 2 integers
+            <input type="text" placeholder="Enter Integer 1" id="int1">
+            <input type="text" placeholder="Enter Integer 2" id="int2">
+            <button onclick="
+                let int1 = parseInt(document.getElementById('int1').value);
+                let int2 = parseInt(document.getElementById('int2').value);
+                document.getElementById('int-1-Output').innerHTML = 'Int 1 is '+int1;
+                document.getElementById('int-2-Output').innerHTML = 'Int 2 is '+int2;
+                if(int1 === int2){
+                    document.getElementById('int-output').innerHTML = 'The two integers are equal.';
+                }else if(int1 > int2) {
+                    document.getElementById('int-output').innerText = 'The first integer is larger:'+int1;
+                }else if(int2 > int1){
+                    document.getElementById('int-output').innerText = 'The second integer is larger:'+int2;
+                }else{
+                    document.getElementById('int-output').innerText = 'Enter Integers Only';
+                }
+            ">Enter</button>
+        </label>
+        <p id="int-1-Output"></p>
+        <p id="int-2-Output"></p>
+        <p id="int-output"></p>
+    </div>
+    <div id="numNature">
+        <h1>Question 3</h1>
+        <label>
+            Enter a Number
+            <input type="text" placeholder="Enter Integer" id="integer">
+            <button onclick="
+                let integer = parseInt(document.getElementById('integer').value);
+                if(integer === 0){
+                    document.getElementById('numNatureOutput').innerHTML = 'Number is '+integer;
+                }else if(integer > 0) {
+                    document.getElementById('numNatureOutput').innerText = integer+' is positive number';
+                }else if(integer < 0){
+                    document.getElementById('numNatureOutput').innerText = integer+' is negative number';
+                }else{
+                    document.getElementById('numNatureOutput').innerText = 'Enter Integers Only';
+                }
+            ">Enter</button>
+        </label>
+        <p id="numNatureOutput"></p>
+    </div>
+    <div>
+        <h1>Question 4</h1>
+        <label>
+            Enter an Alphabet Capital or Small
+            <input type="text" placeholder="Enter a to z Or A to Z" id="getCharacter" maxlength="1">
+            <button onclick="
+                let alphabet = document.getElementById('getCharacter').value,condition = true;
+                if(alphabet === 'a' || alphabet === 'e' || alphabet === 'i' || alphabet === 'o' || alphabet === 'u' || alphabet === 'A' ||
+                alphabet === 'E' || alphabet === 'I' || alphabet === 'O' || alphabet === 'U'){
+                    document.getElementById('vowelOutput').innerHTML = condition;
+                }else{
+                    condition = false;
+                    document.getElementById('vowelOutput').innerHTML = condition;
+                }
+            ">Enter</button>
+        </label>
+        <p id="vowelOutput"></p>
+    </div>
+    <div>
+        <h1>Question 5</h1>
+        <label>
+            Enter Your Password
+            <input type="text" placeholder="Enter 8 characters" id="getPass" maxlength="8" >
+            <button onclick="
+                let pass = '123Pak45', userPass = document.getElementById('getPass').value;
+                if(userPass === undefined){
+                    document.getElementById('pass').innerHTML = 'Please Enter Your Password';
+                }else if(userPass === pass){
+                    document.getElementById('pass').innerHTML = 'Correct! The password you entered matches the original password';
+                }else{
+                    document.getElementById('pass').innerHTML = 'Incorrect password';
+                }
+            ">Submit</button>
+        </label>
+        <p id="pass"></p>
+    </div>
+    <div>
+        <h1>Question 6</h1>
+        <label>
+            Enter Hours
+            <input type="text" placeholder="Enter hour(s) 0 to 24" id="greet">
+            <button onclick="
+                let greeting;
+                let hour = parseInt(document.getElementById('greet').value);
+                if (hour < 18) {
+                    greeting = 'Good day';
+                    document.getElementById('showGreetMassage').innerHTML = greeting;
+                }else if(hour >= 18 && hour <= 24){
+                    greeting = 'Good evening';
+                    document.getElementById('showGreetMassage').innerHTML = greeting;
+                }
+                else{
+                    document.getElementById('showGreetMassage').innerHTML = 'Enter Valid Hours';
+                }
+            ">Show Greet Message</button>
+        </label>
+        <p id="showGreetMassage"></p>
+    </div>
+    <div>
+        <h1>Question 7</h1>
+        <label>
+            Enter Hours
+            <input type="text" placeholder="Enter hour(s) 0000 to 2400" id="greet1">
+            <button onclick="
+                let greeting1;
+                let hour1 = parseInt(document.getElementById('greet1').value);
+                if (hour1 >= 0 && hour1 < 1200) {
+                    greeting1 = 'Good Morning';
+                    document.getElementById('showGreetMassage1').innerHTML = greeting1;
+                }else if(hour1 >= 1200 && hour1 < 1700){
+                    greeting1 = 'Good Afternoon';
+                    document.getElementById('showGreetMassage1').innerHTML = greeting1;
+                }else if(hour1 >= 1700 && hour1 < 2100){
+                    greeting1 = 'Good Evening';
+                    document.getElementById('showGreetMassage1').innerHTML = greeting1;
+                }else if(hour1 >= 2100 && hour1 <= 2359){
+                    greeting1 = 'Good Night';
+                    document.getElementById('showGreetMassage1').innerHTML = greeting1;
+                }else{
+                    document.getElementById('showGreetMassage1').innerHTML = 'Enter Valid Hours';
+                }
+            ">Show Greet Message</button>
+        </label>
+        <p id="showGreetMassage1"></p>
+    </div>
+
+
+    <h1>Question 8</h1>
+    <div id="qualification"></div>
+    <h1>Question 9</h1>
+    <div id="showMarks"></div>
+    <h1>Question 10(a - g)</h1>
+    <div>
+        <p id="showColors"></p>
+        <p id="showColorAndAdd"></p>
+        <p id="showColorAndAdd1"></p>
+        <p id="showColorAndAdd2"></p>
+        <p id="deleteColor"></p>
+        <p id="addColorWithIndex"></p>
+    </div>
+    <h1>Question 11</h1>
+    <div id="studentScore"></div>
+    <h1>Question 12</h1>
+    <div id="city"></div>
+    <h1>Question 13</h1>
+    <div id="joinArray"></div>
+    <h1>Question 14</h1>
+    <div id="arrayFifo"></div>
+    <h1>Question 15</h1>
+    <div id="arrayLifo"></div>
+    <h1>Question 16</h1>
+</body>
+<script>
+    let studentsName = [];
+    let string = ['Mujeeb', 'Ur', 'Rehman'];
+    let number = [1, 2, 6, 7, 6, 9];
+    let boolean = [true, false];
+    let mixArray = [1,'Mujeeb', true];
+    let qualification = ['SSC',' HSC', 'BCS', 'BS','BCOM', 'MS', 'M. Phil', 'PhD'];
+    for(let i= 0; i < qualification.length; i++){
+        let printArray = document.createElement('p');
+        printArray.innerHTML = qualification[i];
+        document.getElementById('qualification').appendChild(printArray);
+    }
+    studentsName = ['Micheal', 'John', 'Tony'];
+    number = [320, 230, 480];
+    let totalMarks = 500;
+    for(let i = 0; i < studentsName.length; i++){
+        let percentage = (number[i]/totalMarks)*100;
+        let showPercentage = document.createElement('p');
+        showPercentage.innerHTML = 'Score of '+studentsName[i]+' is '+number[i]+'. Percentage:'+percentage+'%';
+        document.getElementById('showMarks').appendChild(showPercentage);
+    }
+    let colors = ['Red', 'Green', 'Blue', 'Yellow', 'White', 'Pink' ,'Sky Blue'];
+    for(let i = 0; i < colors.length; i++){
+        let printColorName = document.createElement('p');
+        printColorName.innerHTML = colors[i];
+        document.getElementById('showColors').appendChild(printColorName);
+    }
+
+    let colors1 = ['Red', 'Green', 'Blue', 'Yellow', 'White', 'Pink' ,'Sky Blue'];
+    let addColorInput = document.createElement('input');
+    addColorInput.type = 'text';
+    addColorInput.placeholder = 'Enter Color';
+    let addColorButton = document.createElement('button');
+    addColorButton.textContent = 'Add Color';
+    document.getElementById('showColorAndAdd').appendChild(addColorInput);
+    document.getElementById('showColorAndAdd').appendChild(addColorButton);
+    addColorButton.addEventListener('click', function(){
+        let addColor = addColorInput.value;
+        colors1.unshift(addColor);
+        for(let i = 0; i < colors1.length; i++){
+            let printColorName = document.createElement('p');
+            printColorName.innerHTML = colors1[i];
+            document.getElementById('showColorAndAdd').appendChild(printColorName);
+        }
+    });
+
+    let colors2 = ['Red', 'Green', 'Blue', 'Yellow', 'White', 'Pink' ,'Sky Blue'];
+    let addColorInput1 = document.createElement('input');
+    addColorInput1.type = 'text';
+    addColorInput1.placeholder = 'Enter Color';
+    let addColorButton1 = document.createElement('button');
+    addColorButton1.textContent = 'Add Color';
+    document.getElementById('showColorAndAdd1').appendChild(addColorInput1);
+    document.getElementById('showColorAndAdd1').appendChild(addColorButton1);
+    addColorButton1.addEventListener('click', function(){
+        let addColor = addColorInput1.value;
+        colors2.push(addColor);
+        for(let i = 0; i < colors2.length; i++){
+            let printColorName = document.createElement('p');
+            printColorName.innerHTML = colors2[i];
+            document.getElementById('showColorAndAdd1').appendChild(printColorName);
+        }
+    });
+
+    let colors3 = ['Red', 'Green', 'Blue', 'Yellow', 'White', 'Pink' ,'Sky Blue'];
+    let addColorInput21 = document.createElement('input');
+    let addColorInput22 = document.createElement('input');
+    addColorInput21.type = 'text';
+    addColorInput22.type = 'text';
+    addColorInput21.placeholder = 'Enter Color 1';
+    addColorInput22.placeholder = 'Enter Color 2';
+    let addColorButton2 = document.createElement('button');
+    addColorButton2.textContent = 'Add Color';
+    document.getElementById('showColorAndAdd2').appendChild(addColorInput21);
+    document.getElementById('showColorAndAdd2').appendChild(addColorInput22);
+    document.getElementById('showColorAndAdd2').appendChild(addColorButton2);
+    addColorButton2.addEventListener('click', function(){
+        let addColor1 = addColorInput21.value;
+        let addColor2 = addColorInput22.value;
+        colors3.unshift(addColor1, addColor2);
+        for(let i = 0; i < colors3.length; i++){
+            let printColorName = document.createElement('p');
+            printColorName.innerHTML = colors3[i];
+            document.getElementById('showColorAndAdd2').appendChild(printColorName);
+        }
+    });
+
+    let colors4 = ['Red', 'Green', 'Blue', 'Yellow', 'White', 'Pink' ,'Sky Blue'];
+    let elementBeforeDelete = document.createElement('h4');
+    elementBeforeDelete.innerHTML = 'Colors Before Deletion';
+    document.getElementById('deleteColor').appendChild(elementBeforeDelete);
+    for(let i = 0; i < colors4.length; i++){
+        let printColorName = document.createElement('p');
+        printColorName.innerHTML = colors4[i];
+        document.getElementById('deleteColor').appendChild(printColorName);
+    }
+    colors4.pop();
+    let elementAfterDelete = document.createElement('h4');
+    elementAfterDelete.innerHTML = 'Colors After Deletion';
+    document.getElementById('deleteColor').appendChild(elementAfterDelete);
+    for(let i = 0; i < colors4.length; i++){
+        let printColorName = document.createElement('p');
+        printColorName.innerHTML = colors4[i];
+        document.getElementById('deleteColor').appendChild(printColorName);
+    }
+
+    let colors5 = ['Red', 'Green', 'Blue', 'Yellow', 'White', 'Pink' ,'Sky Blue'];
+    for(let i = 0; i < colors5.length; i++){
+        let printColorName = document.createElement('p');
+        printColorName.innerHTML = colors5[i];
+        document.getElementById('addColorWithIndex').appendChild(printColorName);
+    }
+    let inputToAddColor = document.createElement('input');
+    let inputIndex = document.createElement('input');
+    let inputButton = document.createElement('button');
+    inputToAddColor.placeholder = 'Enter Color';
+    inputIndex.placeholder = 'Enter color index';
+    inputButton.textContent = 'Add Color';
+    document.getElementById('addColorWithIndex').appendChild(inputToAddColor);
+    document.getElementById('addColorWithIndex').appendChild(inputIndex);
+    document.getElementById('addColorWithIndex').appendChild(inputButton);
+    inputButton.addEventListener('click', function(){
+        let addColor = inputToAddColor.value;
+        let addIndex = parseInt(inputIndex.value);
+        colors5.splice(addIndex, 0, addColor);
+        for(let i = 0; i < colors5.length; i++){
+            let printColorName = document.createElement('p');
+            printColorName.innerHTML = colors5[i];
+            document.getElementById('addColorWithIndex').appendChild(printColorName);
+        }
+    });
+
+    let colors6 = ['Red', 'Green', 'Blue', 'Yellow', 'White', 'Pink' ,'Sky Blue'];
+    for(let i = 0; i < colors6.length; i++){
+        let printColorName = document.createElement('p');
+        printColorName.innerHTML = colors6[i];
+        document.getElementById('addColorWithIndex').appendChild(printColorName);
+    }
+    let numOfCol = document.createElement('input');
+    let deleteButton = document.createElement('button');
+    inputIndex.placeholder = 'Enter color index';
+    numOfCol.placeholder = 'add num of col to del';
+    deleteButton.textContent = 'Delete Color';
+    document.getElementById('addColorWithIndex').appendChild(inputIndex);
+    document.getElementById('addColorWithIndex').appendChild(numOfCol);
+    document.getElementById('addColorWithIndex').appendChild(deleteButton);
+    deleteButton.addEventListener('click', function(){
+        let addIndex = parseInt(inputIndex.value);
+        let numOfColors = parseInt(numOfCol.value);
+        colors6.splice(addIndex, numOfColors);
+        for(let i = 0; i < colors6.length; i++){
+            let printColorName = document.createElement('p');
+            printColorName.innerHTML = colors6[i];
+            document.getElementById('addColorWithIndex').appendChild(printColorName);
+        }
+    });
+
+    let studentScore = [320, 230, 480, 120];
+    let printStScore = document.createElement('h4');
+    printStScore.innerHTML = 'Score of Students:';
+    document.getElementById('studentScore').appendChild(printStScore);
+    for(let i = 0; i < studentScore.length; i++){
+        let printScore = document.createElement('p');
+        printScore.innerHTML = ' '+studentScore[i];
+        printScore.style.display = 'inline';
+        document.getElementById('studentScore').appendChild(printScore);
+    }
+    studentScore.sort();
+    let printSortStScore = document.createElement('h4');
+    printSortStScore.innerHTML = 'Ordered Score of Students:';
+    document.getElementById('studentScore').appendChild(printSortStScore);
+    for(let i = 0; i < studentScore.length; i++){
+        let printScore = document.createElement('p');
+        printScore.innerHTML = ' '+studentScore[i];
+        printScore.style.display = 'inline';
+        document.getElementById('studentScore').appendChild(printScore);
+    }
+
+    let  cities = ['Karachi', 'Lahore', 'Islamabad', 'Quetta', 'Peshawar'];
+    let cityBeforeCopy = document.createElement('h4');
+    cityBeforeCopy.innerHTML = 'City List';
+    document.getElementById('city').appendChild(cityBeforeCopy);
+    for(let i=0; i<cities.length; i++) {
+        let printCity = document.createElement('p');
+        printCity.innerHTML = ' '+cities[i];
+        printCity.style.display = 'inline';
+        document.getElementById('city').appendChild(printCity);
+    }
+    let cityAfterCopy = document.createElement('h4');
+    cityAfterCopy.innerHTML = 'Selected City List';
+    document.getElementById('city').appendChild(cityAfterCopy);
+    let selectedCities = cities.slice(2, 4);
+    for(let i=0; i<selectedCities.length; i++) {
+        let printCity = document.createElement('p');
+        printCity.innerHTML = ' '+cities[i];
+        printCity.style.display = 'inline';
+        document.getElementById('city').appendChild(printCity);
+    }
+
+    let arr = ['This', 'is', 'my', 'cat'];
+    let arrayUnJoin = document.createElement('h4');
+    arrayUnJoin.innerHTML = 'Array:';
+    document.getElementById('joinArray').appendChild(arrayUnJoin);
+    for(let i=0; i<arr.length; i++){
+        let printArray = document.createElement('p');
+        printArray.innerHTML = arr[i]+' ';
+        printArray.style.display = 'inline';
+        document.getElementById('joinArray').appendChild(printArray);
+    }
+    let joined = arr.join();
+    let arrayJoin = document.createElement('h4');
+    arrayJoin.innerHTML = 'String:';
+    document.getElementById('joinArray').appendChild(arrayJoin);
+    let printArray = document.createElement('p');
+    printArray.innerHTML = joined;
+    document.getElementById('joinArray').appendChild(printArray);
+
+    let arrFifo = ['Keyboard', 'Mouse', 'Printer', 'Monitor'];
+    let arrayFifo = document.createElement('h4');
+    arrayFifo.innerHTML = 'Devices:';
+    document.getElementById('arrayFifo').appendChild(arrayFifo);
+    for(let i=0; i<arrFifo.length; i++){
+        let printArray = document.createElement('p');
+        printArray.innerHTML = arrFifo[i]+' ';
+        printArray.style.display = 'inline';
+        document.getElementById('arrayFifo').appendChild(printArray);
+    }
+    let arrFifoCopy = [...arrFifo];
+    let arrayFifo1 = document.createElement('h4');
+    arrayFifo1.innerHTML = 'Devices are Outing:';
+    document.getElementById('arrayFifo').appendChild(arrayFifo1);
+    for(let i=0; i<arrFifoCopy.length; i++){
+        let printFifo = document.createElement('p');
+        printFifo.innerHTML = 'Out:'+arrFifo.shift();
+        document.getElementById('arrayFifo').appendChild(printFifo);
+    }
+
+    arrFifo = ['Keyboard', 'Mouse', 'Printer', 'Monitor'];
+    arrayFifo = document.createElement('h4');
+    arrayFifo.innerHTML = 'Devices:';
+    document.getElementById('arrayLifo').appendChild(arrayFifo);
+    for(let i=0; i<arrFifo.length; i++){
+        let printArray = document.createElement('p');
+        printArray.innerHTML = arrFifo[i]+' ';
+        printArray.style.display = 'inline';
+        document.getElementById('arrayLifo').appendChild(printArray);
+    }
+    arrFifoCopy = [...arrFifo];
+    arrayFifo1 = document.createElement('h4');
+    arrayFifo1.innerHTML = 'Devices are Outing:';
+    document.getElementById('arrayLifo').appendChild(arrayFifo1);
+    for(let i=0; i<arrFifoCopy.length; i++){
+        let printFifo = document.createElement('p');
+        printFifo.innerHTML = 'Out:'+arrFifo.pop();
+        document.getElementById('arrayLifo').appendChild(printFifo);
+    }
+
+    var manufacturers = ["Apple", "Samsung", "Motorola", "Nokia", "Sony", "Haier"];
+    document.write("<select>");
+    for (var i = 0; i < manufacturers.length; i++) {
+        document.write("<option value='"+manufacturers[i]+"'>"+manufacturers[i]+"</option>");
+    }
+    document.write("</select>");
+</script>
+</html>
